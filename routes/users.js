@@ -13,11 +13,11 @@ router.post('/', create)
 //READ
 router.get('/', read)
 //READONE
-router.get('/',readOne)
+router.get('/:_id',readOne)
 //UPDATE
-router.put('/', update)
+router.put('/:u_id', update)
 //DESTROY
-router.delete('/',destroy)
+router.delete('/:id',destroy)
 
 export default router
 

@@ -5,7 +5,7 @@ let schema = new Schema({
     name: {type:String, required:true},
     price:{type:String, required:true},
     duration:{type:String, required:true},
-    tags:{type:String, required:true},
+    tags:{type:Array, required:true},
     photo:{type:String, required:true},
     city_id:{type:Types.ObjectId, required:true, ref:'cities'}
 })

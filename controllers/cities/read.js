@@ -1,11 +1,11 @@
-import Citie from "../../models/City.js";
+import City from "../../models/City.js";
 
 export default async(req, res)=>{
     try{ 
-        let allCities = await Citie.find()
+        let allCities = await City.find()
         return res.status(200).josn({
             success: true,
-            message:'citie found',
+            message:'city found',
             response: allCities
         })
 

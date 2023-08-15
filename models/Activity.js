@@ -1,4 +1,4 @@
-import {model, Schema} from 'mongoose';
+import {model, Schema, Types} from 'mongoose';
 
 let collection = "activities"
 let schema = new Schema({

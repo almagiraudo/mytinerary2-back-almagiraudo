@@ -1,12 +1,14 @@
-import User from "../../models/User.js";
+import City from "../../models/City.js";
 
 export default async(req, res)=>{
     try{
-        let oneCitie = await User.findOne({_id:req.params.id}).select("country photo city")
+        let oneCity = await City
+        .findOne({_id:req.params.id})
+        .select("country photo city")
         return res.status(200).json({
             success:true,
-            message: 'citie found',
-            response: oneCitie
+            message: 'city found',
+            response: oneCity
         })
     }catch(error){
         return res.status(400).json({

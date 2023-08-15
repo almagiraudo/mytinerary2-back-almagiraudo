@@ -6,7 +6,7 @@ export default async(req, res)=>{
             req.params.u_id,
             req.body,
             {new:true}
-        ).select('name, photo, mail')
+        ).select('name photo mail')
         return res.status(200).json({
             success:true,
             message:'user updated',
@@ -15,7 +15,7 @@ export default async(req, res)=>{
     }catch(error){
         return res.status(400).json({
             success: false,
-            message:'not found',
+            message:'not updated',
             response: null
     })
      }

@@ -8,7 +8,8 @@ export default async (req, res)=>{{
         success: true,
         message: 'city created',
         response: newCity
-    })} catch(err){
+    })
+} catch(err){
         return res.status(400).json({
             success:false,
             message:'not created',

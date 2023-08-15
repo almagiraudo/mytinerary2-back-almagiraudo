@@ -1,10 +1,13 @@
 import City from "../../models/City.js";
 
-export default async (req, res, next) => {
-    try {
-        console.log(req.query);
-        let objetoDeBusqueda = {}
-        let objetoDeOrdenamiento = {}
+export default async(req, res)=>{
+    try{ 
+        let allCities = await City.find()
+        return res.status(200).josn({
+            success: true,
+            message:'city found',
+            response: allCities
+        })
 
         if (req.query.admin_id) {
             objetoDeBusqueda.admin_id = req.query.admin_id

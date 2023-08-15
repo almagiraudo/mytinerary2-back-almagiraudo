@@ -1,7 +1,7 @@
 import {connect} from 'mongoose';
 import 'dotenv/config.js';
 import City from '../City.js';
-import Itinerary from '../Itinerary';
+import Itinerary from '../Itinerary.js';
 
 
 const itineraries = [{

@@ -14,6 +14,7 @@ router.post('/', create)
 router.get('/', read)
 //READONE
 router.get('/:_id',readOne)
+
 //UPDATE
 router.put('/:u_id', update)
 //DESTROY

@@ -3,9 +3,6 @@ import 'dotenv/config.js';
 import Activity from '../Activity.js';
 import Itinerary from '../Itinerary.js';
 
-
-
-
 const actitivies = [{
     name: "Hikking Tour",
     photo: "https://i.im.ge/2022/09/07/OfQSzP.Depositphotos-111788638-s-2015.webp",
@@ -228,7 +225,7 @@ async function createActivities(arrayActivities){
     try{
         await connect(process.env.LINK_DB)
         for(let activity of arrayActivities){
-            let itinerary = await Itinerary.findOne({itinerary:activity.itinerary_id});
+            let itinerary = await Itinerary.findOne({name:activity.itinerary_id});
             let itinerary_id = await itinerary.city_id;
             activity.itinerary_id = itinerary_id;
             await Activity.create(activity)

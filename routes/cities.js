@@ -12,7 +12,7 @@ router.post('/', create)
 //READ
 router.get('/',read)
 //READONE
-router.get('/:user_id', readOne)
+router.get('/id', readOne)
 //UPDATE
 router.put('/:c_id',update)
 //DESTROY

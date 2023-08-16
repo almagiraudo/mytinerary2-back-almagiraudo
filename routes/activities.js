@@ -1,4 +1,4 @@
-import express, { Router } from "express";
+import express  from "express";
 import create from "../controllers/activities/create.js";
 import update from "../controllers/activities/update.js";
 import read from "../controllers/activities/read.js";
@@ -18,4 +18,4 @@ router.put('/:a_id',update)
 //DESTROY
 router.delete('/:id',destroy)
 
-export default Router
+export default router

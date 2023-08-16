@@ -1,9 +1,9 @@
-import express from "express";
+import express, { Router } from "express";
 import create from "../controllers/activities/create.js";
-import update from "../controllers/actitivies/update.js";
+import update from "../controllers/activities/update.js";
 import read from "../controllers/activities/read.js";
 import destroy from "../controllers/activities/destroy.js";
-import readOne from "../controllers/actitivies/readOne.js";
+import readOne from "../controllers/activities/readOne.js";
 
 let router = express.Router();
 
@@ -17,3 +17,5 @@ router.get('/:_id',readOne)
 router.put('/:a_id',update)
 //DESTROY
 router.delete('/:id',destroy)
+
+export default Router

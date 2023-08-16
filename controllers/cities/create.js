@@ -1,4 +1,4 @@
-import City from "../../models/User.js";
+import City from "../../models/City.js";
 
 export default async (req, res)=>{{
 
@@ -10,6 +10,7 @@ export default async (req, res)=>{{
         response: newCity
     })
 } catch(err){
+    console.log(err)
         return res.status(400).json({
             success:false,
             message:'not created',

@@ -11,7 +11,9 @@ let schema = new Schema({
     descritption:{type:String, default:"edit later"},
     smalldescritption:{type:String, default:"edit later"},
     featuredLocation:{type:String, default:"edit later"},
-    admin_id:{ type:Types.ObjectId, required:true, ref:'users'}
+    admin_id:{ type:Types.ObjectId, required:true, ref:'users'},
+    
+   
     //para relacionar datos e mongo es necesario referenciar el dato hacia la coleccion que necesito relacionar
 })
 //estoy parado en el modelo ctity de la coleccion cities y necesito relacionar 

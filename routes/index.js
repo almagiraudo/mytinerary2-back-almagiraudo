@@ -16,4 +16,5 @@ router.use('/itineraries', itinerariesRouter)
 router.use('/activities', activitiesRouter)
 
 
+
 export default router

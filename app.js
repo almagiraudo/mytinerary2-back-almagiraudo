@@ -11,7 +11,10 @@ import path from 'path';  //no va a dar la ruta principal de nuestro servidor
 //var logger = require('morgan');
 import logger from 'morgan';
 //var indexRouter = require('./routes/index');   //solo vaamoss a configurar las rutas de enrutador de back principal
- import indexRouter from './routes/index.js'                                           // este enrutador va a llamar a todods los otros recursos
+ import indexRouter from './routes/index.js';
+ //modulo para desbloqear las politicas de CORS origines crzados
+ //del back y del front
+ import cors from 'cors';                                           // este enrutador va a llamar a todods los otros recursos
 
 var app = express();
 
@@ -22,7 +25,7 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-//app.use(cookieParser());
+app.use(cors());
 app.use(express.static(path.join(__dirname, 'public'))); //obligo al servidor a usar ls archivos estaticos de la carpeta public
 
 //ROUTER  

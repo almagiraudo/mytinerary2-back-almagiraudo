@@ -4,8 +4,8 @@ export default async(req, res)=>{
     try{
         let oneCity = await City
         .findOne({_id:req.params._id})
-        .select("country city photo")
-        console.log(oneCity)
+        // .select("country city photo")
+         console.log(oneCity)
         return res.status(200).json({
             success:true,
             message: 'city found',

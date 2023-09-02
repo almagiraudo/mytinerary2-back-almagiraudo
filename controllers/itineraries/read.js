@@ -8,7 +8,14 @@ export default async(req, res, next)=>{
         }console.log(queries) 
        
         let allItineraries = await Itinerary.find(queries, '-__v -createdAt -updatedAt')
-        .populate('city_id', 'city, photo, admin_id')
+        .populate({
+            path: 'city_id',
+            select: 'city photo',
+            populate: {
+              path: 'admin_id',
+              select: 'name photo'
+            }
+          })
         
         return res.status(200).json({
             success: true,

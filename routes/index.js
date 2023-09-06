@@ -17,4 +17,5 @@ router.use('/activities', activitiesRouter)
 router.use('/auth', auth_router)
 
 
+
 export default router

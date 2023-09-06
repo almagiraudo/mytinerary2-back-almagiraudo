@@ -1,13 +1,18 @@
 import { Router } from "express";
 import register from "../controllers/auth/register.js";
+import notExistUser from "../middlewares/notExistUser.js";
+
 import validator from "../middlewares/validator.js";
 import registerSchema from "../schemas/register.js";
 import existsUser from "../middlewares/existsUser.js";
 import validPassword from "../middlewares/validPassword.js";
-
-
+import signinSchema from "../schemas/signin.js";
+import signIn from "../controllers/auth/signIn.js";
+import isPassOk from "../middlewares/isPassOk.js";
+import isValidToken from "../middlewares/isValidToken.js";
 let auth_router = Router()
 
 auth_router.post('/signup',validator(registerSchema),existsUser,validPassword,register)
+auth_router.post('/signin',validator(signinSchema),notExistUser,isPassOk,isValidToken, signIn)
 
 export default auth_router;

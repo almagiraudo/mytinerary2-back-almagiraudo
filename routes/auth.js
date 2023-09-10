@@ -1,5 +1,5 @@
 import { Router } from "express";
-import passport from "passport";
+import passport from "../middlewares/passport.js";
 import signout from "../controllers/auth/signout.js";
 import register from "../controllers/auth/register.js";
 import notExistUser from "../middlewares/notExistUser.js";

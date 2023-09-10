@@ -1,5 +1,5 @@
 import joi from "joi"
-import {joiPasswordExtendCore} from "joi-password"
+
 
 
 let registerSchema = joi.object({
@@ -18,19 +18,12 @@ let registerSchema = joi.object({
     }),
     password: joi.string()
     .required()
-    /* .minOfLowercase(1)
-    .minOfUppercase(1)
-    .minOfNumeric(1)
-    .noWhiteSpaces() */
     .min(6)
     .max(15)
     .messages({
         'string.min': "password must have at least 6 characters please",
         'string.max':"password must have less less than 20 characters or be equal to 20 characters please!",
         'string.empty': "password can not be empty",
-       /*  'sting.minOfLowerCase': "the password must contain at least one lower case character",
-        'string.minOfUpperCase': "the password must contain at least one upper case character",
-        'string.minOfNumeric': "the password must contain at least one number", */
         'any.required':"password is required"
     }),
     country: joi.string().required().min(3).max(20).messages({
@@ -42,6 +35,10 @@ let registerSchema = joi.object({
     lastName: joi.string().min(3).max(20).empty('').messages({
         'string.min': "last name must have at least 3 characters please",
         'string.max':"last name must have less less than 20 characters or be equal to 20 characters please!"
+    }),
+    photo: joi.string().min(3).max(200).empty('').messages({
+        'string.min': "photo must have at least 3 characters please",
+        'string.max':"photo must have less less than 20 characters or be equal to 20 characters please!"
     })
 
 })

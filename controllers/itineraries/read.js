@@ -1,30 +1,30 @@
 import Itinerary from "../../models/Itinerary.js";
 
-export default async(req, res, next)=>{
-    try{
-         let queries = {}
-        if(req.query.city_id){
+export default async (req, res, next) => {
+    try {
+        let queries = {}
+        if (req.query.city_id) {
             queries.city_id = req.query.city_id
-        }console.log(queries) 
-       
+        } console.log(queries)
+
         let allItineraries = await Itinerary.find(queries, '-__v -createdAt -updatedAt')
-        .populate({
-            path: 'city_id',
-            select: 'city photo',
-            populate: {
-              path: 'admin_id',
-              select: 'name photo'
-            }
-          })
-        
+            .populate({
+                path: 'city_id',
+                select: 'city photo',
+                populate: {
+                    path: 'admin_id',
+                    select: 'name photo'
+                }
+            })
+
         return res.status(200).json({
             success: true,
-            message:'itineraries found ',
+            message: 'itineraries found ',
             response: allItineraries
         })
-    }catch(error){ 
+    } catch (error) {
         next(error)
-            
-        
+
+
     }
 }

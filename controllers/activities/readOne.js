@@ -3,7 +3,7 @@ import Activity from "../../models/Activity.js";
 export default async(req, res)=>{
     try{
         let oneActivity = await Activity
-        .findOne({_id:req.params._id})
+        .findOne({_id:req.params.itinerary_id})
         .select("name photo itinerary_id")
         return res.status(200).json({
             success: true,
@@ -18,3 +18,4 @@ export default async(req, res)=>{
         })
     }
 }
+
